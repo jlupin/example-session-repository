@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-pojo/common-pojo.iml" filepath="$PROJECT_DIR$/common-pojo/common-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common-util/common-util.iml" filepath="$PROJECT_DIR$/common-util/common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/integration-test/integration-test.iml" filepath="$PROJECT_DIR$/integration-test/integration-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/session-repository.iml" filepath="$PROJECT_DIR$/session-repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/session-repository/implementation/session-repository-implementation.iml" filepath="$PROJECT_DIR$/session-repository/implementation/session-repository-implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/session-repository/interfaces/session-repository-interfaces.iml" filepath="$PROJECT_DIR$/session-repository/interfaces/session-repository-interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-servlet/implementation/test-servlet-implementation.iml" filepath="$PROJECT_DIR$/test-servlet/implementation/test-servlet-implementation.iml" />
+    </modules>
+  </component>
+</project>

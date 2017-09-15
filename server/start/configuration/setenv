@@ -1,0 +1,5 @@
+# JLupin Next Server tries to determine JAVA_HOME automatically, set it manually if it fails.
+#JAVA_HOME=
+
+# Java Options
+JAVA_OPTS="-Xms128M -Xmx512M"
