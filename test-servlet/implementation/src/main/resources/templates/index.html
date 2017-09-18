@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Session Repository</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/application.css" crossorigin="anonymous" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Session Repository</a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/plainServlet">Plain servlet</a>
+                </li>
+            </ul>
+            <form th:action="@{/logout}" class="form-inline my-2 my-lg-0" method="POST">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <h1>Session attributes</h1>
+        </div>
+        <div class="row">
+            <form th:action="@{/}" method="POST">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="key" name="key" placeholder="Key"/>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="value" name="value" placeholder="Value"/>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" type="submit">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <tr th:each="attr : ${T(java.util.Collections).list(#httpSession.getAttributeNames())}">
+                    <td th:text="${attr}"></td>
+                    <td th:text="${#httpSession.getAttribute(attr)}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js" crossorigin="anonymous"></script>
+</body>
+</html>

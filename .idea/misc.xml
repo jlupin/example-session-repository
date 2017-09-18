@@ -77,6 +77,8 @@
         <option value="$PROJECT_DIR$/session-repository/interfaces/pom.xml" />
         <option value="$PROJECT_DIR$/session-repository/implementation/pom.xml" />
         <option value="$PROJECT_DIR$/test-servlet/implementation/pom.xml" />
+        <option value="$PROJECT_DIR$/data-repository/interfaces/pom.xml" />
+        <option value="$PROJECT_DIR$/data-repository/implementation/pom.xml" />
       </list>
     </option>
   </component>

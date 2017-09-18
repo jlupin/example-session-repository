@@ -4,7 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/common-pojo/common-pojo.iml" filepath="$PROJECT_DIR$/common-pojo/common-pojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/common-util/common-util.iml" filepath="$PROJECT_DIR$/common-util/common-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-repository/implementation/data-repository-implementation.iml" filepath="$PROJECT_DIR$/data-repository/implementation/data-repository-implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-repository/interfaces/data-repository-interfaces.iml" filepath="$PROJECT_DIR$/data-repository/interfaces/data-repository-interfaces.iml" />
       <module fileurl="file://$PROJECT_DIR$/integration-test/integration-test.iml" filepath="$PROJECT_DIR$/integration-test/integration-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jlupin-session/jlupin-session.iml" filepath="$PROJECT_DIR$/jlupin-session/jlupin-session.iml" />
       <module fileurl="file://$PROJECT_DIR$/server/server.iml" filepath="$PROJECT_DIR$/server/server.iml" />
       <module fileurl="file://$PROJECT_DIR$/session-repository.iml" filepath="$PROJECT_DIR$/session-repository.iml" />
       <module fileurl="file://$PROJECT_DIR$/session-repository/implementation/session-repository-implementation.iml" filepath="$PROJECT_DIR$/session-repository/implementation/session-repository-implementation.iml" />

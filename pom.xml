@@ -36,6 +36,9 @@
         <module>session-repository/implementation</module>
         <module>integration-test</module>
         <module>test-servlet/implementation</module>
+        <module>data-repository/interfaces</module>
+        <module>data-repository/implementation</module>
+        <module>jlupin-session</module>
     </modules>
 
     <properties>

@@ -1,44 +1,78 @@
 package com.example.jlupin.session.jlupin.session.repository;
 
 import com.example.jlupin.session.jlupin.session.repository.session.JLupinSerializableSession;
+import com.jlupin.impl.util.JLupinUtil;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.session.ExpiringSession;
 import org.springframework.session.SessionRepository;
+import org.springframework.session.events.SessionCreatedEvent;
+import org.springframework.session.events.SessionDeletedEvent;
+
+import javax.servlet.http.HttpSessionEvent;
 
 /**
  * @author Piotr Heilman
  */
 public class JLupinSessionRepository implements SessionRepository<JLupinSerializableSession> {
     private final SessionRepository<ExpiringSession> sessionRepository;
+    private ApplicationEventPublisher eventPublisher;
 
-    public JLupinSessionRepository(final SessionRepository<ExpiringSession> sessionRepository) {
+    public JLupinSessionRepository(final SessionRepository<ExpiringSession> sessionRepository, final ApplicationEventPublisher eventPublisher) {
         this.sessionRepository = sessionRepository;
+        this.eventPublisher = eventPublisher;
     }
 
     @Override
     public JLupinSerializableSession createSession() {
-        final ExpiringSession expiringSession = sessionRepository.createSession();
+        final ExpiringSession expiringSession;
+        try {
+            expiringSession = sessionRepository.createSession();
+        } catch (Throwable th) {
+            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+        }
+
         if (expiringSession == null) {
             return null;
         }
-        return new JLupinSerializableSession(expiringSession);
+        final JLupinSerializableSession createdSession = new JLupinSerializableSession(expiringSession);
+
+        this.eventPublisher.publishEvent(new SessionCreatedEvent(this, createdSession));
+
+        return createdSession;
     }
 
     @Override
     public void save(JLupinSerializableSession jLupinSerializableSession) {
-        sessionRepository.save(jLupinSerializableSession.getExpiringSession());
+        try {
+            sessionRepository.save(jLupinSerializableSession.getExpiringSession());
+        } catch (Throwable th) {
+            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+        }
     }
 
     @Override
     public JLupinSerializableSession getSession(String s) {
-        final ExpiringSession expiringSession = sessionRepository.getSession(s);
+        final ExpiringSession expiringSession;
+        try {
+            expiringSession = sessionRepository.getSession(s);
+        } catch (Throwable th) {
+            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+        }
+
         if (expiringSession == null) {
             return null;
         }
+
         return new JLupinSerializableSession(expiringSession);
     }
 
     @Override
     public void delete(String s) {
-        sessionRepository.delete(s);
+        try {
+            sessionRepository.delete(s);
+        } catch (Throwable th) {
+            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+        }
     }
 }
