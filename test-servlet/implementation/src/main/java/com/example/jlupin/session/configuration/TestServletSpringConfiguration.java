@@ -1,7 +1,5 @@
 package com.example.jlupin.session.configuration;
 
-import com.example.jlupin.session.jlupin.session.repository.JLupinSessionRepository;
-import com.example.jlupin.session.listener.HttpSessionListenerImpl;
 import com.example.jlupin.session.service.interfaces.GetDefaultDataService;
 import com.jlupin.impl.client.util.JLupinClientUtil;
 import com.jlupin.interfaces.client.delegator.JLupinDelegator;
@@ -10,6 +8,7 @@ import com.jlupin.interfaces.client.proxy.producer.JLupinProxyObjectProducer;
 import com.jlupin.interfaces.common.enums.PortType;
 import com.jlupin.interfaces.container.system.JLupinSystemContainer;
 import com.jlupin.interfaces.logger.JLupinLogger;
+import com.jlupin.session.repository.JLupinSessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ApplicationEventPublisher;
