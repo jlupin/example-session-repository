@@ -1,5 +1,9 @@
 @echo off
 
+TITLE JLupin Next Server EE 1.4.0.4
+COLOR 0B
+MODE CON: COLS=160 LINES=1500
+
 SET LOG_LEVEL=%1
 
 if "%LOG_LEVEL%" == "" (
@@ -55,7 +59,7 @@ if exist "%JAVA_HOME%\bin\java.exe" SET JLUPIN_JAVA_EXE="%JAVA_HOME%\bin\java.ex
 
 SET CLASSPATH_START=%CURRENT_PATH%lib
 
-SET JLUPIN_CLASSPATH=%CLASSPATH_START%\jlupin-starter-1.4.0.3.jar;%CLASSPATH_START%\jlupin-util-1.4.0.3.jar;%CLASSPATH_START%\jlupin-starter-logger-1.4.0.3.jar;%CLASSPATH_START%\jlupin-reference-container-1.4.0.3.jar;%CLASSPATH_START%\jlupin-interfaces-1.4.0.3.jar;%CLASSPATH_START%\jlupin-classloader-1.4.0.3.jar;%CLASSPATH_START%\jlupin-command-interpreter-1.4.0.3.jar;%CLASSPATH_START%\jlupin-command-executor-1.4.0.3.jar;%CLASSPATH_START%\jlupin-classloader-manager-1.4.0.3.jar;%CLASSPATH_START%\jlupin-compilator-1.4.0.3.jar;%CLASSPATH_START%\jlupin-singleton-container-1.4.0.3.jar;%CLASSPATH_START%\jlupin-starter-logger-manager-1.4.0.3.jar;%CLASSPATH_START%\jlupin-control-information-1.4.0.3.jar;%CLASSPATH_START%\jlupin-common-1.4.0.3.jar;%CLASSPATH_START%\jlupin-printstream-strategy-manager-1.4.0.3.jar;%CLASSPATH_START%\jlupin-client-1.4.0.3.jar;%CLASSPATH_START%\ext\snakeyaml-1.11.jar
+SET JLUPIN_CLASSPATH=%CLASSPATH_START%\jlupin-starter-1.4.0.4.jar;%CLASSPATH_START%\jlupin-util-1.4.0.4.jar;%CLASSPATH_START%\jlupin-starter-logger-1.4.0.4.jar;%CLASSPATH_START%\jlupin-reference-container-1.4.0.4.jar;%CLASSPATH_START%\jlupin-interfaces-1.4.0.4.jar;%CLASSPATH_START%\jlupin-classloader-1.4.0.4.jar;%CLASSPATH_START%\jlupin-command-interpreter-1.4.0.4.jar;%CLASSPATH_START%\jlupin-command-executor-1.4.0.4.jar;%CLASSPATH_START%\jlupin-classloader-manager-1.4.0.4.jar;%CLASSPATH_START%\jlupin-compilator-1.4.0.4.jar;%CLASSPATH_START%\jlupin-singleton-container-1.4.0.4.jar;%CLASSPATH_START%\jlupin-starter-logger-manager-1.4.0.4.jar;%CLASSPATH_START%\jlupin-control-information-1.4.0.4.jar;%CLASSPATH_START%\jlupin-common-1.4.0.4.jar;%CLASSPATH_START%\jlupin-printstream-strategy-manager-1.4.0.4.jar;%CLASSPATH_START%\jlupin-client-1.4.0.4.jar;%CLASSPATH_START%\ext\snakeyaml-1.11.jar
 
 echo '
 echo '========================================================================='

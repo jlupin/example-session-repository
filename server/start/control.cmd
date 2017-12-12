@@ -1,5 +1,5 @@
 @echo off
-TITLE #TITLE#
+TITLE JLupin Next Server Local Console
 COLOR 0B
 MODE CON: COLS=160 LINES=1500
 

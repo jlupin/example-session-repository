@@ -1,7 +1,9 @@
 package com.example.jlupin.session.controller;
 
+import com.example.jlupin.session.exception.CoreSystemUnavailableException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -32,5 +34,10 @@ public class IndexController {
         }
 
         return "redirect:/";
+    }
+
+    @ExceptionHandler(CoreSystemUnavailableException.class)
+    public String handleCoreSystemUnavailableException() {
+        return "core_system_unavailable";
     }
 }

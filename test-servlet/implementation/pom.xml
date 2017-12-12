@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.2.RELEASE</version>
+        <version>1.5.7.RELEASE</version>
     </parent>
 
     <name>test-servlet</name>
@@ -36,8 +36,8 @@
     </pluginRepositories>
 
     <properties>
-        <server.version>1.4.0.3</server.version>
-        <jlupin.next.server.maven.plugin.version>1.0.1</jlupin.next.server.maven.plugin.version>
+        <server.version>1.4.0.4</server.version>
+        <jlupin.next.server.maven.plugin.version>1.0.2</jlupin.next.server.maven.plugin.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -84,9 +84,14 @@
         </dependency>
 
         <dependency>
-            <groupId>com.example.jlupin.session</groupId>
-            <artifactId>jlupin-session</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jlupin.external</groupId>
+            <artifactId>jlupin-session-repository-plugin</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

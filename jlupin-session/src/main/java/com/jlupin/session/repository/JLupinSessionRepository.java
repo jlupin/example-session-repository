@@ -2,6 +2,7 @@ package com.jlupin.session.repository;
 
 import com.jlupin.impl.util.JLupinUtil;
 import com.jlupin.session.JLupinSerializableSession;
+import com.jlupin.session.error.SessionRepositoryUnavailableException;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.session.ExpiringSession;
 import org.springframework.session.SessionRepository;
@@ -25,7 +26,7 @@ public class JLupinSessionRepository implements SessionRepository<JLupinSerializ
         try {
             expiringSession = sessionRepository.createSession();
         } catch (Throwable th) {
-            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+            throw new SessionRepositoryUnavailableException(JLupinUtil.getHighestMessageFromThrowable(th), th);
         }
 
         if (expiringSession == null) {
@@ -43,7 +44,7 @@ public class JLupinSessionRepository implements SessionRepository<JLupinSerializ
         try {
             sessionRepository.save(jLupinSerializableSession.getExpiringSession());
         } catch (Throwable th) {
-            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+            throw new SessionRepositoryUnavailableException(JLupinUtil.getHighestMessageFromThrowable(th), th);
         }
     }
 
@@ -53,7 +54,7 @@ public class JLupinSessionRepository implements SessionRepository<JLupinSerializ
         try {
             expiringSession = sessionRepository.getSession(s);
         } catch (Throwable th) {
-            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+            throw new SessionRepositoryUnavailableException(JLupinUtil.getHighestMessageFromThrowable(th), th);
         }
 
         if (expiringSession == null) {
@@ -68,7 +69,7 @@ public class JLupinSessionRepository implements SessionRepository<JLupinSerializ
         try {
             sessionRepository.delete(s);
         } catch (Throwable th) {
-            throw new IllegalStateException(JLupinUtil.getHighestMessageFromThrowable(th), th);
+            throw new SessionRepositoryUnavailableException(JLupinUtil.getHighestMessageFromThrowable(th), th);
         }
     }
 }
