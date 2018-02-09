@@ -12,11 +12,4 @@
 
     <artifactId>data-repository-interfaces</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.example.jlupin.session</groupId>
-            <artifactId>common-pojo</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>

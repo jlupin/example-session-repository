@@ -35,8 +35,8 @@ public class PlainServlet extends HttpServlet {
         writer.println("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />");
         writer.println("    <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\" />");
         writer.println("");
-        writer.println("    <link rel=\"stylesheet\" href=\"/css/bootstrap.min.css\" crossorigin=\"anonymous\" />");
-        writer.println("    <link rel=\"stylesheet\" href=\"/css/application.css\" crossorigin=\"anonymous\" />");
+        writer.println("    <link rel=\"stylesheet\" href=\"/test-servlet/css/bootstrap.min.css\" crossorigin=\"anonymous\" />");
+        writer.println("    <link rel=\"stylesheet\" href=\"/test-servlet/css/application.css\" crossorigin=\"anonymous\" />");
         writer.println("</head>");
         writer.println("<body>");
         writer.println("    <nav class=\"navbar navbar-expand-md navbar-dark bg-dark\">");
@@ -44,13 +44,13 @@ public class PlainServlet extends HttpServlet {
         writer.println("        <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">");
         writer.println("            <ul class=\"navbar-nav mr-auto\">");
         writer.println("                <li class=\"nav-item\">");
-        writer.println("                    <a class=\"nav-link\" href=\"/\">Home</a>");
+        writer.println("                    <a class=\"nav-link\" href=\"/test-servlet/\">Home</a>");
         writer.println("                </li>");
         writer.println("                <li class=\"nav-item active\">");
         writer.println("                    <a class=\"nav-link\" href=\"#\">Plain servlet <span class=\"sr-only\">(current)</span></a>");
         writer.println("                </li>");
         writer.println("            </ul>");
-        writer.println("            <form action=\"/logout\" class=\"form-inline my-2 my-lg-0\" method=\"POST\">");
+        writer.println("            <form action=\"/test-servlet/logout\" class=\"form-inline my-2 my-lg-0\" method=\"POST\">");
         writer.println("                <input type=\"hidden\" name=\"_csrf\" value=\"" + csrfToken.getToken() + "\"/>");
         writer.println("                <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Logout</button>");
         writer.println("            </form>");
@@ -62,7 +62,7 @@ public class PlainServlet extends HttpServlet {
         writer.println("            <h1>Session attributes</h1>");
         writer.println("        </div>");
         writer.println("        <div class=\"row\">");
-        writer.println("            <form action=\"/plainServlet\" method=\"POST\">");
+        writer.println("            <form action=\"/test-servlet/plainServlet\" method=\"POST\">");
         writer.println("                <div class=\"form-row\">");
         writer.println("                <input type=\"hidden\" name=\"_csrf\" value=\"" + csrfToken.getToken() + "\"/>");
         writer.println("                    <div class=\"col\">");
@@ -91,11 +91,11 @@ public class PlainServlet extends HttpServlet {
         writer.println("        </div>");
         writer.println("    </div>");
         writer.println("");
-        writer.println("    <script src=\"/js/jquery-3.2.1.slim.min.js\" crossorigin=\"anonymous\"></script>");
-        writer.println("    <script src=\"/js/popper.min.js\" crossorigin=\"anonymous\"></script>");
-        writer.println("    <script src=\"/js/tether.min.js\" crossorigin=\"anonymous\"></script>");
-        writer.println("    <script src=\"/js/bootstrap.min.js\" crossorigin=\"anonymous\"></script>");
-        writer.println("    <script src=\"/js/ie10-viewport-bug-workaround.js\" crossorigin=\"anonymous\"></script>");
+        writer.println("    <script src=\"/test-servlet/js/jquery-3.2.1.slim.min.js\" crossorigin=\"anonymous\"></script>");
+        writer.println("    <script src=\"/test-servlet/js/popper.min.js\" crossorigin=\"anonymous\"></script>");
+        writer.println("    <script src=\"/test-servlet/js/tether.min.js\" crossorigin=\"anonymous\"></script>");
+        writer.println("    <script src=\"/test-servlet/js/bootstrap.min.js\" crossorigin=\"anonymous\"></script>");
+        writer.println("    <script src=\"/test-servlet/js/ie10-viewport-bug-workaround.js\" crossorigin=\"anonymous\"></script>");
         writer.println("</body>");
         writer.println("</html>");
     }
@@ -115,6 +115,6 @@ public class PlainServlet extends HttpServlet {
             }
         }
 
-        resp.sendRedirect("/plainServlet");
+        resp.sendRedirect("/test-servlet/plainServlet");
     }
 }

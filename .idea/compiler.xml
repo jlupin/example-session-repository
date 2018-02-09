@@ -6,14 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common-pojo" />
-        <module name="common-util" />
         <module name="data-repository-implementation" />
         <module name="data-repository-interfaces" />
-        <module name="integration-test" />
-        <module name="jlupin-session" />
-        <module name="session-repository-implementation" />
-        <module name="session-repository-interfaces" />
         <module name="test-servlet-implementation" />
       </profile>
     </annotationProcessing>

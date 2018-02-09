@@ -1,10 +1,10 @@
 <configuration scan="true">
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>../logs/server/microservice/test-servlet/microservice.log</file>
+        <file>../logs/microservice/test-servlet/microservice.log</file>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>../logs/server/microservice/test-servlet/microservice.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>../logs/microservice/test-servlet/microservice.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
 
