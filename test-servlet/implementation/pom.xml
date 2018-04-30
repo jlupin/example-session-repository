@@ -36,8 +36,8 @@
     </pluginRepositories>
 
     <properties>
-        <server.version>1.4.1.0-RC3</server.version>
-        <jlupin.next.server.maven.plugin.version>1.0.2</jlupin.next.server.maven.plugin.version>
+        <server.version>1.4.1.0-SNAPSHOT-7</server.version>
+        <jlupin.next.server.maven.plugin.version>1.1.2-SNAPSHOT-1</jlupin.next.server.maven.plugin.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -49,7 +49,22 @@
             <groupId>com.jlupin</groupId>
             <artifactId>jlupin-client-assembly</artifactId>
             <version>${server.version}</version>
-            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
         <dependency>
@@ -91,12 +106,12 @@
         <dependency>
             <groupId>com.jlupin.external</groupId>
             <artifactId>jlupin-session-repository-plugin</artifactId>
-            <version>1.4.1.0-RC3</version>
+            <version>1.1.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.jlupin</groupId>
-            <artifactId>jlupin-servlet-monitor</artifactId>
+            <artifactId>jlupin-spring-boot-1-servlet-monitor</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>

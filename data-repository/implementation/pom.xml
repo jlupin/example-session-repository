@@ -22,6 +22,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>4.3.11.RELEASE</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -35,6 +36,13 @@
             <groupId>com.jlupin</groupId>
             <artifactId>jlupin-client-assembly</artifactId>
             <version>${server.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.8.0-alpha2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
