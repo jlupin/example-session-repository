@@ -1,7 +1,7 @@
 package com.example.jlupin.session.filter;
 
 import com.example.jlupin.session.exception.CoreSystemUnavailableException;
-import com.jlupin.external.session.repository.error.SessionRepositoryUnavailableException;
+import com.jlupin.impl.microservice.partofjlupin.httpsessionrepository.error.HttpSessionRepositoryUnavailableException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -18,7 +18,7 @@ public class CustomExceptionHandlerFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
             filterChain.doFilter(request, response);
-        } catch (SessionRepositoryUnavailableException | CoreSystemUnavailableException e) {
+        } catch (HttpSessionRepositoryUnavailableException | CoreSystemUnavailableException e) {
             // Put exception into request scope (perhaps of use to a view)
             request.setAttribute("javax.servlet.error.exception", e);
             request.setAttribute("javax.servlet.error.status_code", HttpStatus.SERVICE_UNAVAILABLE.value());

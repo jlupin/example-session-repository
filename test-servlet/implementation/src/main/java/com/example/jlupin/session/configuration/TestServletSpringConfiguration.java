@@ -18,7 +18,7 @@ import org.springframework.session.config.annotation.web.http.EnableSpringHttpSe
 @EnableSpringHttpSession
 @ComponentScan({
         "com.example.jlupin.session",
-        "com.jlupin.external.session.repository.configuration",
+        "com.jlupin.impl.microservice.partofjlupin.httpsessionrepository.configuration",
         "com.jlupin.servlet.monitor.configuration"
 })
 @ServletComponentScan("com.example.jlupin.session")
