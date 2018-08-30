@@ -7,7 +7,7 @@
     <groupId>com.example.jlupin.session</groupId>
     <artifactId>session-repository</artifactId>
     <packaging>pom</packaging>
-    <version>1.5.0.0</version>
+    <version>1.5.0.1</version>
 
     <repositories>
         <!-- Repository is also accessible using https connection: -->
@@ -36,14 +36,15 @@
     </modules>
 
     <properties>
-        <jlupin.platform.version>1.5.0.0</jlupin.platform.version>
+        <jlupin.platform.client.version>1.5.0.2</jlupin.platform.client.version>
         <jlupin.platform.maven.plugin.version>1.5.0.0</jlupin.platform.maven.plugin.version>
         <jlupin.skipDeploy>true</jlupin.skipDeploy>
         <maven.surefire.skipTests>false</maven.surefire.skipTests>
 
-        <maven.shade.plugin.version>3.0.0</maven.shade.plugin.version>
+        <spring.context.version>5.0.8.RELEASE</spring.context.version>
         <maven.failsafe.plugin.version>2.20</maven.failsafe.plugin.version>
         <maven.surefire.plugin.version>2.20</maven.surefire.plugin.version>
+        <slf4j.version>1.8.0-alpha2</slf4j.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
