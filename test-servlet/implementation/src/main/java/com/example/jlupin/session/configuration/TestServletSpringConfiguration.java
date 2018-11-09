@@ -2,6 +2,7 @@ package com.example.jlupin.session.configuration;
 
 import com.example.jlupin.session.service.interfaces.GetDefaultDataService;
 import com.jlupin.impl.client.util.JLupinClientUtil;
+import com.jlupin.impl.microservice.partofjlupin.httpsessionrepository.annotation.EnableJLupinHttpSessionRepository;
 import com.jlupin.interfaces.client.delegator.JLupinDelegator;
 import com.jlupin.interfaces.common.enums.PortType;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -18,9 +19,9 @@ import org.springframework.session.config.annotation.web.http.EnableSpringHttpSe
 @EnableSpringHttpSession
 @ComponentScan({
         "com.example.jlupin.session",
-        "com.jlupin.impl.microservice.partofjlupin.httpsessionrepository.configuration",
         "com.jlupin.servlet.monitor.configuration"
 })
+@EnableJLupinHttpSessionRepository
 @ServletComponentScan("com.example.jlupin.session")
 public class TestServletSpringConfiguration {
     @Bean
