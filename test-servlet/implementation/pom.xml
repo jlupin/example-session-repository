@@ -4,53 +4,47 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
+        <artifactId>example-session-repository</artifactId>
+        <groupId>com.example.jlupin.session</groupId>
+        <version>1.6.0.0</version>
+        <relativePath>./../../pom.xml</relativePath>
     </parent>
 
     <name>test-servlet</name>
-    <groupId>com.example.jlupin.session</groupId>
     <artifactId>test-servlet-implementation</artifactId>
     <packaging>war</packaging>
-    <version>1.5.0.3</version>
-
-    <repositories>
-        <!-- Repository is also accessible using https connection: -->
-        <!-- https://support.jlupin.com/maven2/ -->
-        <repository>
-            <id>jlupin-central</id>
-            <name>jlupin</name>
-            <url>http://support.jlupin.com/maven2/</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <!-- Repository is also accessible using https connection: -->
-        <!-- https://support.jlupin.com/maven2/ -->
-        <pluginRepository>
-            <id>jlupin-central</id>
-            <name>jlupin</name>
-            <url>http://support.jlupin.com/maven2/</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <properties>
-        <jlupin.platform.client.version>1.5.0.3</jlupin.platform.client.version>
-        <jlupin.platform.maven.plugin.version>1.5.0.0</jlupin.platform.maven.plugin.version>
-        <jlupin.servlet.monitor.version>1.5.0.0</jlupin.servlet.monitor.version>
-        <http.session.repostiory.plugin.version>1.5.0.3</http.session.repostiory.plugin.version>
-
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <main.dir>${project.basedir}/../../</main.dir>
+        <jlupin.deploy.skip>false</jlupin.deploy.skip>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-        <!-- JLupin dependencies -->
         <dependency>
             <groupId>com.jlupin</groupId>
-            <artifactId>jlupin-client-assembly</artifactId>
-            <version>${jlupin.platform.client.version}</version>
+            <artifactId>jlupin-platform-servlet</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jlupin</groupId>
+            <artifactId>jlupin-spring-boot-2-servlet-monitor</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -71,11 +65,6 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
         </dependency>
 
@@ -90,19 +79,14 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.example.jlupin.session</groupId>
             <artifactId>data-repository-interfaces</artifactId>
-            <version>1.5.0.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
+            <version>1.6.0.0</version>
         </dependency>
 
         <dependency>
@@ -110,21 +94,22 @@
             <artifactId>http-session-repository-plugin</artifactId>
             <version>${http.session.repostiory.plugin.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.jlupin</groupId>
-            <artifactId>jlupin-spring-boot-1-servlet-monitor</artifactId>
-            <version>${jlupin.servlet.monitor.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>${project.name}</finalName>
-
         <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven.war.plugin.version}</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -137,7 +122,6 @@
             <plugin>
                 <groupId>com.jlupin</groupId>
                 <artifactId>jlupin-platform-maven-plugin</artifactId>
-                <version>${jlupin.platform.maven.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>jlupin-zip</id>
@@ -145,7 +129,6 @@
                             <goal>zip</goal>
                         </goals>
                         <configuration>
-                            <includeDependenciesInZip>false</includeDependenciesInZip>
                             <additionalFilesDirectories>
                                 <param>../additional-files</param>
                             </additionalFilesDirectories>
@@ -153,7 +136,6 @@
                     </execution>
                     <execution>
                         <id>jlupin-deploy</id>
-                        <phase>pre-integration-test</phase>
                         <goals>
                             <goal>deploy</goal>
                         </goals>
