@@ -6,13 +6,13 @@
     <parent>
         <groupId>com.jlupin</groupId>
         <artifactId>jlupin-platform-parent</artifactId>
-        <version>1.6.0.2</version>
+        <version>1.6.1.0</version>
     </parent>
 
     <groupId>com.example.jlupin.session</groupId>
     <artifactId>example-session-repository</artifactId>
     <packaging>pom</packaging>
-    <version>1.6.0.0</version>
+    <version>1.6.1.0</version>
 
     <repositories>
         <!-- Repository is also accessible using https connection: -->
@@ -44,7 +44,7 @@
         <main.dir>${project.basedir}/</main.dir>
         <jlupin.deploy.skip>true</jlupin.deploy.skip>
 
-        <http.session.repostiory.plugin.version>1.6.0.0</http.session.repostiory.plugin.version>
+        <http.session.repostiory.plugin.version>1.6.1.0</http.session.repostiory.plugin.version>
         <spring.boot.version>2.1.2.RELEASE</spring.boot.version>
 
         <maven.war.plugin.version>3.2.2</maven.war.plugin.version>

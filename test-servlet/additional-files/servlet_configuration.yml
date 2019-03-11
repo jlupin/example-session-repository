@@ -8,7 +8,7 @@ SERVERS:
     springBootLoaderClassName: org.springframework.boot.loader.WarLauncher
     contextName: /test-servlet
     isStartOnMainServerInitialize: true
-    httpStickySession: false
+    httpStickySession: true
     isLoadSimpleApplicationPropertiesBeforeStartup: true
   TRANSMISSION:
     readTimeout: 480000
@@ -23,12 +23,12 @@ SERVERS:
     threadExecutingTimeOut: 3600000
     isStartOnMainServerInitialize: true
 PROPERTIES:
-  platformVersion: '1.6.0.0'
+  platformVersion: '1.6.1.0'
   #jvmOptions1: '-Xms128M -Xmx512M -Dlog4j.configurationFile=${sys:microservice.dir}/log4j2.xml -Dlogging.config=${microservice.dir}/log4j2.xml -agentlib:jdwp=transport=dt_socket,address=12998,server=y,suspend=n'
   jvmOptions1: '-Xms128M -Xmx512M -Dlog4j.configurationFile=${sys:microservice.dir}/log4j2.xml -Dlogging.config=${microservice.dir}/log4j2.xml' #jvmOptions_2 - default the same as jvmOptions_1
   #jvmOptions2: '-Xms128M -Xmx512M -Dlog4j.configurationFile=${sys:microservice.dir}/log4j2.xml -Dlogging.config=${microservice.dir}/log4j2.xml'
   externalPort: '8000'
-  version: '1.6.0.0'
+  version: '1.6.1.0'
   switchDelayTime: 0
   connectionSocketTimeoutInMillis: 1000
   readTimeoutInMillis: 30000
